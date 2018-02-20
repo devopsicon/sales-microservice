@@ -13,4 +13,5 @@ application.
 3. master and development branches is protected and only way to contribute is via Pull-Request
 4. Unit and Integration testing coverage is monited via CodeClimate 
 
-
+## TODO
+1. Incorporate to CodeClimate
