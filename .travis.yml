@@ -11,5 +11,6 @@ script:
   - gradle check
   - gradle jacocoTestReport
 after_script:
-  - ./cc-test-reporter format-coverage -d -t jacoco build/reports/jacoco/test/jacocoTestReport.xml
+  - cd src/main/java
+  - ./cc-test-reporter format-coverage -d -t jacoco ../../../build/reports/jacoco/test/jacocoTestReport.xml
   - ./cc-test-reporter upload-coverage -d
