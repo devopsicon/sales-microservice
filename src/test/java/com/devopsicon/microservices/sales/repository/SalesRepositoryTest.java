@@ -40,8 +40,4 @@ public class SalesRepositoryTest {
         assertThat(retVal.getLocationId()).isEqualTo(1L);
         assertThat(retVal.getUserId()).isEqualTo(1L);
     }
-
-    @Test
-    public void findByLocationId() {
-    }
 }
