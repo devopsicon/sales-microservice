@@ -9,7 +9,7 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-public class Sales {
+public class Sale {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
@@ -19,7 +19,7 @@ public class Sales {
     private Long locationId;
     private String comments;
 
-    public Sales(){
+    public Sale(){
 
     }
 }
