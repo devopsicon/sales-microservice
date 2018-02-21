@@ -1,8 +1,6 @@
 package com.devopsicon.microservices.sales.controller;
 
 import com.devopsicon.microservices.sales.entity.Sale;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,6 +1,5 @@
 package com.devopsicon.microservices.sales.controller;
 
-import org.springframework.web.bind.annotation.RestController;
 
 import com.devopsicon.microservices.sales.entity.Sale;
 import com.devopsicon.microservices.sales.repository.SaleRepository;
