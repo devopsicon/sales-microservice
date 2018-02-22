@@ -6,15 +6,25 @@ buildscript {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.10.RELEASE")
     }
 }
-
-group 'com.devopsicon.microservices'
-version '1.0-SNAPSHOT'
+plugins {
+    id "com.commercehub.cucumber-jvm" version "0.13"
+}
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'jacoco'
+
+addCucumberSuite 'cucumberTest'
+
+cucumber {
+    maxParallelForks = 3
+}
+
+
+group 'com.devopsicon.microservices'
+version '1.0-SNAPSHOT'
 
 jar {
     baseName = 'sales-microservice'
@@ -34,6 +44,12 @@ dependencies {
     compile("com.h2database:h2")
     compileOnly 'org.projectlombok:lombok:1.16.20'
     testCompile("org.springframework.boot:spring-boot-starter-test")
+
+    cucumberTestCompile group: 'io.cucumber', name: 'cucumber-java', version: '2.3.1'
+
+    // To use JUnit assertions in the step definitions:
+    cucumberTestCompile 'junit:junit:4.12'
+    cucumberTestCompile group: 'io.rest-assured', name: 'rest-assured', version: '3.0.7'
 }
 
 jacocoTestReport {
