@@ -31,5 +31,9 @@ jobs:
 
     - stage: functional test on heroku staging
       if: type = push AND branch = develop
-      script: gradle cucumberTest
+      script: gradle cucumberTest --info
+
+    - stage: performance test on heroku staging
+      if: type = push AND branch = develop
+      script: gradle perfTest --info
 
