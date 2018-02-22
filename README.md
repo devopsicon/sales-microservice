@@ -8,6 +8,15 @@
 Bodach Protection Corp's sales microservice responsible for providing sales capabilities to our fictional
 application.
 
+## Testing locations
+* [Unit and Integration] (https://github.com/devopsicon/sales-microservice/tree/develop/src/test/java/com/devopsicon/microservices/sales)
+* [Functional] (https://github.com/devopsicon/sales-microservice/tree/develop/src/cucumberTest)
+* [Performance] (https://github.com/devopsicon/sales-microservice/tree/develop/src/perfTest)
+
+## DevOps Automation Notes
+* TravisCI configuration is via .travis.yml file
+* Docker configuration is via Dockerfile
+
 ## Contribution Notes
 1. This project uses Gradle and Lombok
 2. All tests must be done as pre-merged checks
