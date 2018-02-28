@@ -1,2 +1,16 @@
+pluginManagement {
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.namespace == 'org.gradle.sample') {
+                useModule('org.gradle.sample:sample-plugins:1.0.0')
+            }
+        }
+    }
+    repositories {
+        maven {
+            url 'http://plugins.gradle.org/m2/gradle/plugin/'
+        }
+    }
+}
 rootProject.name = 'sales'
 
