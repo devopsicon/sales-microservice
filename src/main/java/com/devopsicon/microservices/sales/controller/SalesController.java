@@ -22,8 +22,15 @@ public class SalesController {
         saleRepository.save(sale);
     }
 
-    @RequestMapping("/{id}")
+    @RequestMapping(value="/{id}", method=RequestMethod.GET)
     public Sale getSaleById(@PathVariable(value="id") Long id) {
         return saleRepository.findOne(id);
     }
+
+
+    @RequestMapping(value="/{id}", method=RequestMethod.DELETE)
+    public void deleteSaleById(@PathVariable(value="id") Long id) {
+         saleRepository.delete(id);
+    }
+
 }
