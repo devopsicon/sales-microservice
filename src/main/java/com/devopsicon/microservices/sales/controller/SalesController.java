@@ -27,7 +27,6 @@ public class SalesController {
         return saleRepository.findOne(id);
     }
 
-
     @RequestMapping(value="/{id}", method=RequestMethod.DELETE)
     public void deleteSaleById(@PathVariable(value="id") Long id) {
          saleRepository.delete(id);
