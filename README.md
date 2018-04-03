@@ -26,7 +26,11 @@ application.
 1. This project uses Gradle and Lombok
 2. All tests must be done as pre-merged checks
 3. master and development branches is protected and only way to contribute is via Pull-Request
-4. Unit and Integration testing coverage is monited via CodeClimate 
+4. Unit and Integration testing coverage is monited via CodeClimate
+
+## Deployment Notes
+- Github master branch merger is handled via Travis Encrypt, for details please take a look at push commit code to master branch
+
 
 ## TODO
-1. Incorporate to CodeClimate
+1. Adding Release and Tagging from Master

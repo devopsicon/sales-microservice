@@ -18,6 +18,6 @@ public class PerformanceTests {
     public void testPrep() {
         ValidatableResponse response = given().when().get(URL_string+PATH).
                 then();
-        response.time(lessThan(1500L));
+        response.time(lessThan(3000L));
     }
 }

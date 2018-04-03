@@ -37,3 +37,13 @@ jobs:
       if: type = push AND branch = develop
       script: gradle perfTest --info
 
+    - stage: push commit code to master branch
+      if: type = push AND branch = develop
+      before_script:
+        - openssl aes-256-cbc -K $encrypted_98492b574450_key -iv $encrypted_98492b574450_iv -in travis-secret-key.enc -out travis-secret-key -d
+      script:
+        - eval "$(ssh-agent)"
+        - chmod 600 ./travis-secret-key
+        - ssh-add ./travis-secret-key
+        - chmod +x merge.sh
+        - ./merge.sh
