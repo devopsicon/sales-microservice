@@ -19,10 +19,10 @@ public class DataSourceConfig {
     @Bean
     public DataSource devDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(env.getRequiredProperty("jdbc.driverClassName"));
-        dataSource.setUrl(env.getRequiredProperty("jdbc.url"));
-        dataSource.setUsername(env.getRequiredProperty("jdbc.username"));
-        dataSource.setPassword(env.getRequiredProperty("jdbc.password"));
+        dataSource.setDriverClassName(env.getRequiredProperty("JDBC_DRIVER_CLASS_NAME"));
+        dataSource.setUrl(env.getRequiredProperty("JDBC_URL"));
+        dataSource.setUsername(env.getRequiredProperty("JDBC_USERNAME"));
+        dataSource.setPassword(env.getRequiredProperty("JDBC_PASSWORD"));
         return dataSource;
     }
 }
