@@ -8,6 +8,7 @@ buildscript {
 }
 plugins {
     id "com.commercehub.cucumber-jvm" version "0.13"
+	id 'net.researchgate.release' version '2.6.0' 
 }
 
 apply plugin: 'java'
@@ -89,5 +90,26 @@ jacocoTestReport {
         xml.enabled true
         csv.enabled false
         html.destination file("${buildDir}/jacocoHtml")
+    }
+}
+version='1.0.0-SNAPSHOT'
+group='net.researchgate'
+
+release{
+	tagCommitMessage = '[Gradle Release Plugin] - creating tag: '
+    newVersionCommitMessage = '[Gradle Release Plugin] - new version commit: '
+    tagTemplate = '${version}'
+	 scmAdapters = [
+        net.researchgate.release.GitAdapter,
+        net.researchgate.release.SvnAdapter,
+        net.researchgate.release.HgAdapter,
+        net.researchgate.release.BzrAdapter
+    ]
+	git {
+        requireBranch = 'master'
+        pushToRemote = 'origin'
+        pushToBranchPrefix = ''
+        commitVersionFileOnly = false
+        signTag = false
     }
 }
